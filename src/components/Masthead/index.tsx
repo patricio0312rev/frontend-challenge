@@ -1,5 +1,5 @@
 import React from 'react';
-import MKLogo from '../../img/Mortal-Kombat-Logo.png';
+import MKLogo from '../../assets/img/Mortal-Kombat-Logo.png';
 import './styles.css';
 
 const Masthead = () => {

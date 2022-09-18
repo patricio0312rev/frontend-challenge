@@ -1,0 +1,46 @@
+.search {
+    width: 100%;
+    position: relative;
+    margin: 40px 0
+}
+
+.search .container {
+    width: fit-content;
+    margin:  0 auto;
+}
+
+.search .container .search-bar {
+    background: #ffffff;
+    width: 500px;
+    height: 40px;
+    border: 1px solid #777777;
+    border-radius: 4px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.search .container .search-bar  img {
+    margin: auto;
+    height: 15px;
+    width: 15px;
+    margin: auto 12px;
+    color: #333333;
+}
+
+.search .container .search-bar  input {
+    width: 100%;
+    border: none;
+}
+
+.search .gradient {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    height: 1px;
+    width: 50%;
+    
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000000 51.04%, rgba(0, 0, 0, 0) 100%);
+}
