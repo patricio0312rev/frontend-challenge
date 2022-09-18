@@ -1,5 +1,5 @@
 import React from 'react';
-import MKLogo from '../../assets/img/Mortal-Kombat-Logo.png';
+import mortalKombatLogo from '../../assets/img/Mortal-Kombat-Logo.png';
 import './styles.css';
 
 const Masthead = () => {
@@ -7,7 +7,7 @@ const Masthead = () => {
     <header>
         <div className='masthead' />
         <div className="logo-container">
-            <img src={MKLogo} alt="Mortal Kombat Logo" className='logo'/>
+            <img src={mortalKombatLogo} alt="Mortal Kombat Logo" className='logo'/>
         </div>
     </header>
   )

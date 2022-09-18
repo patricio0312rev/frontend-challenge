@@ -1,3 +1,5 @@
+export {default as Badge} from './Badge'
+export {default as Filters} from './Filters'
 export {default as Masthead} from './Masthead'
 export {default as SearchBar} from './SearchBar'
 export {default as Squad} from './Squad'

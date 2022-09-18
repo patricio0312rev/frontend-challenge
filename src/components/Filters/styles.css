@@ -1,0 +1,10 @@
+.filters {
+    width: 100%;
+}
+
+.filters .container {
+    margin: 0 5%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}

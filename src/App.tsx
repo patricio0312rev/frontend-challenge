@@ -1,11 +1,23 @@
 import './App.css'
-import { Masthead, SearchBar, Squad, Title } from './components'
+import { Filters, Masthead, SearchBar, Squad, Title } from './components'
 import jsonData from './data/characters.json'
 import type { Character } from './types'
 
-const data: Character[] = jsonData as Character[]
+const data: Character[] = jsonData as Character[];
 
 const App = () => {
+  const filters: string[] = [];
+
+  data.forEach((champion) => {
+    if(champion.tags !== undefined) {
+      champion.tags.forEach((tag) => {
+        if (filters.indexOf(tag.tag_name) === -1) {
+          filters.push(tag.tag_name);
+        }
+      })
+    }
+  });
+  
   return (
     <div className="App">
       <Masthead/>
@@ -13,6 +25,7 @@ const App = () => {
 
       <Squad />
       <SearchBar />
+      <Filters data={filters} />
     </div>
   )
 }

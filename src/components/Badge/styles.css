@@ -1,0 +1,19 @@
+.badge {
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    cursor: pointer;
+
+    text-transform: capitalize;
+    color: #217AFF;
+    background-color: #ffffff;
+    border: 1px solid #217AFF;
+}
+
+.badge:hover {
+    color: #ffffff;
+    background-color: #217AFF;
+    transition: all ease-in-out .3s;
+}
