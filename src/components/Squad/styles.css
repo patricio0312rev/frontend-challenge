@@ -1,0 +1,43 @@
+.squad {
+    width: 100%;
+}
+
+.squad .container {
+    width: fit-content;
+    margin: auto;
+}
+
+.squad .container .scores {
+    display: flex;
+    flex-direction: row;
+}
+
+.squad .container .scores .score-group {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    position: relative;
+}
+
+.squad .container .scores .score-group::before {
+    content: '';
+    position: relative;
+    margin: 0px 0px 0px 20px;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100px;
+    
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 51.04%, rgba(0, 0, 0, 0) 100%);
+}
+
+.squad .container .scores .score-group:first-child:before {
+    display: none;
+}
+
+.squad .container .note {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(102, 102, 102, 1);
+}

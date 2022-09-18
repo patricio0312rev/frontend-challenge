@@ -1,6 +1,5 @@
 import './App.css'
-import { Masthead } from './components'
-import Title from './components/Title'
+import { Masthead, Squad, Title } from './components'
 import jsonData from './data/characters.json'
 import type { Character } from './types'
 
@@ -12,7 +11,7 @@ const App = () => {
       <Masthead/>
       <Title content='Select your squad to defend earthrealm' />
 
-      
+      <Squad />
     </div>
   )
 }
