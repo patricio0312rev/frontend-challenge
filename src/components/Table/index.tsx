@@ -3,7 +3,7 @@ import Row from './Row'
 import './styles.css'
 import { TableProps } from './types'
 
-const Table: FC<TableProps> = ({ data }) => {
+const Table: FC<TableProps> = ({ data, selectedCharacters, toggleCharacter }) => {
   return (
     <section id="table" className='table'>
         <div className="container">
@@ -22,7 +22,7 @@ const Table: FC<TableProps> = ({ data }) => {
                 <tbody>
                     {
                         data.slice(0, 3).map((character) => {
-                            return <Row data={character} key={character.id} />
+                            return <Row data={character} key={character.id} toggleCharacter={toggleCharacter} selected={selectedCharacters.includes(character)} />
                         })
                     }
                 </tbody>

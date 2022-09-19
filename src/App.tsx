@@ -8,6 +8,7 @@ const data: Character[] = jsonData as Character[];
 
 const App = () => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+  const [selectedCharacters, setSelectedCharacters] = useState<Character[]>([])
   const filters: string[] = [];
 
   data.forEach((champion) => {
@@ -28,6 +29,16 @@ const App = () => {
     }
   }
 
+  const toggleCharacter = (character: Character) => {
+    if(!selectedCharacters.includes(character)) {
+      if(selectedCharacters.length < 6) {
+        setSelectedCharacters((otherCharacters) => [...otherCharacters, character]);
+      }
+    } else {
+      setSelectedCharacters(selectedCharacters.filter((item) => item !== character));
+    }
+  }
+
   const clearAllFilters = () => {
     setSelectedFilters([])
   }
@@ -36,6 +47,9 @@ const App = () => {
     console.log(selectedFilters)
   }, [selectedFilters])
   
+  useEffect(() => {
+    console.log('selectedCharacters',selectedCharacters)
+  }, [selectedCharacters])
   return (
     <div className="App">
       <Masthead/>
@@ -44,7 +58,7 @@ const App = () => {
       <Squad />
       <SearchBar />
       <Filters data={filters} toggleFilter={toggleFilter} selectedFilters={selectedFilters} clearAllFilters={clearAllFilters} />
-      <Table data={data} />
+      <Table data={data} selectedCharacters={selectedCharacters} toggleCharacter={toggleCharacter} />
     </div>
   )
 }

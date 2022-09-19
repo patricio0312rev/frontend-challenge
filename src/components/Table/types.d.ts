@@ -1,5 +1,7 @@
 import { Character } from "../../types";
 
 export interface TableProps {
-    data: Character[]
+    data: Character[],
+    selectedCharacters: Character[],
+    toggleCharacter: (Character) => void,
 }

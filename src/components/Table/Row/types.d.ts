@@ -1,5 +1,7 @@
 import { Character } from "../../../types";
 
 export interface RowProps {
-    data: Character
+    data: Character,
+    selected?: boolean,
+    toggleCharacter: (Character) => void,
 }

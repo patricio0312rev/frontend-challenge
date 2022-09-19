@@ -46,8 +46,12 @@ input[type="checkbox"]:checked ~ label::before {
     transition: all ease-in-out .3s;
 }
 
-.row:hover {
+.row:hover, .row.selected {
     background-color: #EDF5FF;
+}
+
+.row.selected:hover {
+    background-color: #d3e3f6;
 }
 
 .row:first-child {
