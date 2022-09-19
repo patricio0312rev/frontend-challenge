@@ -1,4 +1,6 @@
 export interface CharImageProps {
-    image: string,
     alt: string,
+    bigSize?: boolean,
+    image: string,
+    onClick: any,
 }

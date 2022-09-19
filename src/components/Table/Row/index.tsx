@@ -4,13 +4,13 @@ import './styles.css'
 import CharImage from '../../Squad/CharImage/index';
 import { RowProps } from './types';
 
-const Row: FC<RowProps> = ({ data, selected, toggleCharacter }) => {
+const Row: FC<RowProps> = ({ data, removeCharacter, selected, toggleCharacter }) => {
   return (
     <tr className={`row ${selected && 'selected'}`}>
         <td>
             <div className="flex">                
-                <input type="checkbox" name="selected" id="selected" onClick={() => toggleCharacter(data)} checked={selected}/>
-                <CharImage image={data.image} alt={data.name} />
+                <input type="checkbox" name="selected" id="selected" onClick={() => toggleCharacter(data)} checked={selected} onChange={(e) => {}}/>
+                <CharImage image={data.image} alt={data.name} onClick={() => removeCharacter(data)}/>
                 <b className="name">{data.name}</b>
             </div>
         </td>

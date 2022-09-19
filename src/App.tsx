@@ -10,6 +10,8 @@ const App = () => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [selectedCharacters, setSelectedCharacters] = useState<Character[]>([])
   const filters: string[] = [];
+  const [filteredItems, setFilteredItems] = useState<Character[]>([])
+  const [searchWord, setSearchWord] = useState<string>('')
 
   data.forEach((champion) => {
     if(champion.tags !== undefined) {
@@ -29,13 +31,17 @@ const App = () => {
     }
   }
 
+  const removeCharacter = (character: Character) => {
+    setSelectedCharacters(selectedCharacters.filter((item) => item !== character));
+  }
+
   const toggleCharacter = (character: Character) => {
     if(!selectedCharacters.includes(character)) {
       if(selectedCharacters.length < 6) {
         setSelectedCharacters((otherCharacters) => [...otherCharacters, character]);
       }
     } else {
-      setSelectedCharacters(selectedCharacters.filter((item) => item !== character));
+      removeCharacter(character)
     }
   }
 
@@ -43,22 +49,38 @@ const App = () => {
     setSelectedFilters([])
   }
 
+  const filterMyTeam = () => {
+
+    const filteredData = data.filter((character) => selectedCharacters.includes(character))
+
+    setFilteredItems(filteredData);
+  }
+
   useEffect(() => {
-    console.log(selectedFilters)
-  }, [selectedFilters])
+    const filter = searchWord.toLowerCase()
+    const filteredData = data.filter((character) => {
+      return character.name.includes(filter) || (character.tags !== undefined && character.tags.some((tag) => tag.tag_name.includes(filter)))
+    })
+
+    setFilteredItems(filteredData);
+  }, [searchWord])
   
   useEffect(() => {
-    console.log('selectedCharacters',selectedCharacters)
-  }, [selectedCharacters])
+    const filteredData = data.filter((character) => character.tags !== undefined && selectedFilters.every((filter) => character.tags.some((tag) => tag.tag_name === filter)
+    ))
+
+    setFilteredItems(filteredData);
+  }, [selectedFilters])
+  
   return (
     <div className="App">
       <Masthead/>
       <Title content='Select your squad to defend earthrealm' />
 
-      <Squad />
-      <SearchBar />
-      <Filters data={filters} toggleFilter={toggleFilter} selectedFilters={selectedFilters} clearAllFilters={clearAllFilters} />
-      <Table data={data} selectedCharacters={selectedCharacters} toggleCharacter={toggleCharacter} />
+      <Squad selectedCharacters={selectedCharacters} removeCharacter={removeCharacter} />
+      <SearchBar setSearchWord={setSearchWord} />
+      <Filters data={filters} toggleFilter={toggleFilter} selectedFilters={selectedFilters} clearAllFilters={clearAllFilters} filterMyTeam={filterMyTeam} />
+      <Table data={filteredItems} selectedCharacters={selectedCharacters} toggleCharacter={toggleCharacter} removeCharacter={removeCharacter} />
     </div>
   )
 }

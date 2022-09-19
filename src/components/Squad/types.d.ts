@@ -1,8 +1,6 @@
 import { Character } from "../../types";
 
-export interface TableProps {
-    data: Character[],
+export interface SquadProps {
     removeCharacter: (Character) => void,
     selectedCharacters: Character[],
-    toggleCharacter: (Character) => void,
 }

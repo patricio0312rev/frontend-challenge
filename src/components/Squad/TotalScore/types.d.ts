@@ -1,4 +1,4 @@
 export interface TotalScoreProps {
-    score?: number,
+    score?: string|number,
     title: string,
 }

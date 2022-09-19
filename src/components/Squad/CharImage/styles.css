@@ -7,9 +7,21 @@
     cursor: pointer;
 }
 
+.image-container.big {
+    width: 80px;
+    height: 80px;
+}
+
+.image-container.big .remove {
+    width: 80px;
+    height: 80px;
+
+}
+
 .image-container img {
     width: 100%;
     position: relative;
+    font-size: 14px;
 }
 
 .image-container .remove {
