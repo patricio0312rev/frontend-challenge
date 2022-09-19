@@ -2,9 +2,9 @@ import React, { FC } from 'react'
 import './styles.css'
 import { BadgeProps } from './types'
 
-const Badge: FC<BadgeProps> = ({ name }) => {
+const Badge: FC<BadgeProps> = ({ className, name }) => {
   return (
-    <button className="badge">{name}</button>
+    <button className={`badge ${className}`}>{name}</button>
   )
 }
 

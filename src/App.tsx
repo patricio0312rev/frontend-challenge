@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import './App.css'
 import { Filters, Masthead, SearchBar, Squad, Title } from './components'
 import jsonData from './data/characters.json'
@@ -6,6 +7,7 @@ import type { Character } from './types'
 const data: Character[] = jsonData as Character[];
 
 const App = () => {
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const filters: string[] = [];
 
   data.forEach((champion) => {
@@ -17,6 +19,18 @@ const App = () => {
       })
     }
   });
+
+  const toggleFilter = (filter: string) => {
+    if(!selectedFilters.includes(filter)) {
+      setSelectedFilters((selectedFilters) => [...selectedFilters, filter]);
+    } else {
+      setSelectedFilters((selectedFilters) => selectedFilters.splice(selectedFilters.indexOf(filter)))
+    }
+  }
+
+  useEffect(() => {
+    console.log(selectedFilters)
+  }, [selectedFilters])
   
   return (
     <div className="App">
@@ -25,7 +39,7 @@ const App = () => {
 
       <Squad />
       <SearchBar />
-      <Filters data={filters} />
+      <Filters data={filters} toggleFilter={toggleFilter} selectedFilters={selectedFilters} />
     </div>
   )
 }

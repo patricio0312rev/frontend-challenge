@@ -10,10 +10,19 @@
     color: #217AFF;
     background-color: #ffffff;
     border: 1px solid #217AFF;
+    transition: all ease-in-out .3s;
 }
 
 .badge:hover {
     color: #ffffff;
     background-color: #217AFF;
-    transition: all ease-in-out .3s;
+}
+
+.badge.selected {
+    color: #ffffff;
+    background-color: #217AFF;
+}
+
+.badge.selected:hover {
+    background-color: #321FFF;
 }

@@ -1,3 +1,5 @@
 export interface FiltersProps {
-    data: string[]
+    data: string[],
+    selectedFilters: string[],
+    toggleFilter: (string) => void,
 }
