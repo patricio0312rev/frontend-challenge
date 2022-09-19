@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import './styles.css'
 import { FiltersProps } from './types.d';
-import Badge from '../Badge'
+import Badge from './Badge'
 
 const Filters: FC<FiltersProps> = ({ clearAllFilters, data, selectedFilters, toggleFilter }) => {
     

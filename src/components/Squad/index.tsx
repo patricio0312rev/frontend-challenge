@@ -1,5 +1,5 @@
 import React from 'react'
-import TotalScore from '../TotalScore'
+import TotalScore from './TotalScore'
 import './styles.css'
 
 const Squad = () => {
