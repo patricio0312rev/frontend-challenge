@@ -28,6 +28,10 @@ const App = () => {
     }
   }
 
+  const clearAllFilters = () => {
+    setSelectedFilters([])
+  }
+
   useEffect(() => {
     console.log(selectedFilters)
   }, [selectedFilters])
@@ -39,7 +43,7 @@ const App = () => {
 
       <Squad />
       <SearchBar />
-      <Filters data={filters} toggleFilter={toggleFilter} selectedFilters={selectedFilters} />
+      <Filters data={filters} toggleFilter={toggleFilter} selectedFilters={selectedFilters} clearAllFilters={clearAllFilters} />
     </div>
   )
 }

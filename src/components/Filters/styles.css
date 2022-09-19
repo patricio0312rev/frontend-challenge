@@ -8,3 +8,21 @@
     gap: 10px;
     flex-wrap: wrap;
 }
+
+.filters .clear {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-decoration-line: underline;
+    color: #999999;
+    height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all ease-in-out .3s;
+}
+
+.filters .clear:hover {
+    color: #555555;
+}

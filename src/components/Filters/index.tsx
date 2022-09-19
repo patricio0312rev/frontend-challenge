@@ -3,7 +3,7 @@ import './styles.css'
 import { FiltersProps } from './types.d';
 import Badge from '../Badge'
 
-const Filters: FC<FiltersProps> = ({ data, selectedFilters, toggleFilter }) => {
+const Filters: FC<FiltersProps> = ({ clearAllFilters, data, selectedFilters, toggleFilter }) => {
     
   return (
     <div className="filters">
@@ -17,6 +17,7 @@ const Filters: FC<FiltersProps> = ({ data, selectedFilters, toggleFilter }) => {
                     )
                 })
             }
+            <div className="clear" onClick={() => clearAllFilters()}>Clear all</div>
         </div>  
     </div>
   )
