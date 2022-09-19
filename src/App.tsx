@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css'
-import { Filters, Masthead, SearchBar, Squad, Title } from './components'
+import { Filters, Masthead, SearchBar, Squad, Table, Title } from './components'
 import jsonData from './data/characters.json'
 import type { Character } from './types'
 
@@ -24,7 +24,7 @@ const App = () => {
     if(!selectedFilters.includes(filter)) {
       setSelectedFilters((selectedFilters) => [...selectedFilters, filter]);
     } else {
-      setSelectedFilters((selectedFilters) => selectedFilters.splice(selectedFilters.indexOf(filter)))
+      setSelectedFilters(selectedFilters.filter((item) => item !== filter));
     }
   }
 
@@ -44,6 +44,7 @@ const App = () => {
       <Squad />
       <SearchBar />
       <Filters data={filters} toggleFilter={toggleFilter} selectedFilters={selectedFilters} clearAllFilters={clearAllFilters} />
+      <Table data={data} />
     </div>
   )
 }

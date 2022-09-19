@@ -6,20 +6,20 @@ import Badge from './Badge'
 const Filters: FC<FiltersProps> = ({ clearAllFilters, data, selectedFilters, toggleFilter }) => {
     
   return (
-    <div className="filters">
+    <section id="filters" className="filters">
         <div className="container">
             {
                 data.map((filter, idx) => {
                     return (
-                        <div onClick={() => toggleFilter(filter)}>
-                            <Badge key={idx} name={filter} className={`${selectedFilters.includes(filter) && 'selected'}`} />
+                        <div onClick={() => toggleFilter(filter)} key={idx} >
+                            <Badge name={filter} className={`${selectedFilters.includes(filter) && 'selected'}`} />
                         </div>
                     )
                 })
             }
             <div className="clear" onClick={() => clearAllFilters()}>Clear all</div>
         </div>  
-    </div>
+    </section>
   )
 }
 

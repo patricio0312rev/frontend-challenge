@@ -4,7 +4,7 @@ import './styles.css'
 
 const Squad = () => {
   return (
-    <div className='squad'>
+    <section id='squad' className='squad'>
       <div className="container">
         <div className='scores'>
           <div className="score-group">
@@ -24,7 +24,7 @@ const Squad = () => {
           * Totals as average for squad
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

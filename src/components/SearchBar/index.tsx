@@ -4,7 +4,7 @@ import './styles.css'
 
 const SearchBar = () => {
   return (
-    <div className="search">
+    <section id="search" className='search'>
         <div className="container">
             <div className="gradient" />
             <div className="search-bar">
@@ -12,7 +12,7 @@ const SearchBar = () => {
                 <input type="text" placeholder="Search Characters..." id="search" name="search" autoComplete={'off'}/>
             </div>
         </div>
-    </div>
+    </section>
   )
 }
 
